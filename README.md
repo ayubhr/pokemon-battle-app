@@ -4,7 +4,7 @@ A Next.js application for managing Pokémon teams and simulating battles with ty
 
 ## Live Demo
 
-🎮 **[Try the live demo](https://pokemon-battle-app-livid.vercel.app/teams)**
+🎮 **[Try the live demo](https://pokemon-battle-app-livid.vercel.app)**
 
 Experience the Pokémon Battle App in action! Create teams, simulate battles, and explore the type-based combat system.
 
