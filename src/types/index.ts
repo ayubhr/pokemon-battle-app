@@ -7,6 +7,7 @@ export interface Pokemon {
   id: string;
   name: string;
   type: string;
+  type_name: string;
   image: string;
   power: number;
   life: number;
@@ -17,6 +18,10 @@ export interface Team {
   name: string;
   pokemon_ids: string[];
   total_power: number;
+}
+
+export interface TeamWithPokemon extends Team {
+  pokemon: Pokemon[];
 }
 
 export interface Weakness {

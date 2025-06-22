@@ -1,27 +1,73 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    /* ==================== LANGUAGE FEATURES ==================== */
+    // Use the latest TypeScript features for better type safety
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
+    /* ==================== STRICT TYPE CHECKING ==================== */
+    // Enable all strict type checking options for better code quality
+    "noImplicitAny": true, // Prevent use of 'any' type
+    "strictNullChecks": true, // Prevent null/undefined errors
+    "strictFunctionTypes": true, // Strict function type checking
+    "strictBindCallApply": true, // Strict bind/call/apply checking
+    "strictPropertyInitialization": true, // Ensure class properties are initialized
+    "noImplicitReturns": true, // Ensure all code paths return a value
+    "noFallthroughCasesInSwitch": true, // Prevent switch statement fallthrough
+    "noUncheckedIndexedAccess": true, // Require checking array/object access
+    "noImplicitOverride": true, // Require explicit override keyword
+    "exactOptionalPropertyTypes": true, // Strict optional property checking
+    /* ==================== MODULE RESOLUTION ==================== */
     "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "noEmit": true,
     "jsx": "preserve",
-    "incremental": true,
+    /* ==================== PERFORMANCE OPTIMIZATIONS ==================== */
+    // Optimize compilation performance
+    "incremental": true, // Enable incremental compilation
+    "tsBuildInfoFile": ".tsbuildinfo", // Store build info for faster rebuilds
+    "assumeChangesOnlyAffectDirectDependencies": true,
+    /* ==================== CODE QUALITY ==================== */
+    // Additional checks for better code quality
+    "noUnusedLocals": true, // Report unused local variables
+    "noUnusedParameters": true, // Report unused function parameters
+    "noImplicitThis": true, // Report errors on 'this' expressions
+    "useUnknownInCatchVariables": true, // Use 'unknown' instead of 'any' in catch
+    "forceConsistentCasingInFileNames": true, // Ensure consistent file name casing
+    /* ==================== PATH MAPPING ==================== */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/utils/*": ["./src/utils/*"]
+    },
+    /* ==================== PLUGIN SUPPORT ==================== */
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "module": "esnext",
+    "esModuleInterop": true
   },
+  /* ==================== FILE INCLUSION/EXCLUSION ==================== */
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "dist",
+    "build",
+    "coverage",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+  ]
 }
